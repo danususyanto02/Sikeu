@@ -14,6 +14,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomPadding: false,
       body: Container(
         width: MediaQuery.of(context).size.width,
         padding: const EdgeInsets.all(8),
@@ -76,6 +77,28 @@ class _LoginPageState extends State<LoginPage> {
                   hintText: "Password",
                   contentPadding: EdgeInsets.all(13)),
             ),
+            RaisedButton(
+                child: Text("Sign In"),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  side: BorderSide(color: Colors.blue),
+                ),
+                color: Colors.lightBlueAccent,
+                onPressed: () async {
+                  await AuthServices.signIn(
+                      emailController.text, passwordController.text);
+                }),
+            RaisedButton(
+                child: Text("Sign Up"),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  side: BorderSide(color: Colors.blue),
+                ),
+                color: Colors.lightBlueAccent,
+                onPressed: () async {
+                  await AuthServices.signUp(
+                      emailController.text, passwordController.text);
+                }),
           ],
         ),
       ),
