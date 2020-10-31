@@ -46,6 +46,7 @@ class _LoginPageState extends State<LoginPage> {
               height: 50,
             ),
             TextField(
+              controller: emailController,
               decoration: new InputDecoration(
                   icon: Icon(
                     Icons.person,
@@ -63,6 +64,7 @@ class _LoginPageState extends State<LoginPage> {
               height: 20,
             ),
             TextField(
+              controller: passwordController,
               obscureText: true,
               decoration: new InputDecoration(
                   icon: Icon(
