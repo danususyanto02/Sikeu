@@ -21,7 +21,7 @@ class _LoginPageState extends State<LoginPage> {
         child: Column(
           children: <Widget>[
             Container(
-              margin: const EdgeInsets.only(top: 70.0),
+              margin: const EdgeInsets.only(top: 150.0),
               height: 100,
               width: 100,
               decoration:
@@ -42,35 +42,39 @@ class _LoginPageState extends State<LoginPage> {
               style: TextStyle(fontSize: 25, color: Colors.black54),
             ),
             SizedBox(
-              height: 20,
+              height: 50,
             ),
             TextField(
               decoration: new InputDecoration(
-                  prefixIcon: Icon(Icons.person),
+                  icon: Icon(
+                    Icons.person,
+                    size: 40,
+                  ),
                   border: new OutlineInputBorder(
                     borderRadius: const BorderRadius.all(
                       const Radius.circular(15.0),
                     ),
                   ),
-                  filled: true,
                   hintText: "Email",
-                  fillColor: Colors.white70),
+                  contentPadding: EdgeInsets.all(13)),
             ),
             SizedBox(
               height: 20,
             ),
             TextField(
+              obscureText: true,
               decoration: new InputDecoration(
-                  icon: new Icon(Icons.search),
-                  labelText: "Describe Your Issue...",
-                  enabledBorder: const OutlineInputBorder(
-                    borderSide: const BorderSide(
-                      color: Colors.grey,
+                  icon: Icon(
+                    Icons.lock,
+                    size: 40,
+                  ),
+                  border: new OutlineInputBorder(
+                    borderRadius: const BorderRadius.all(
+                      const Radius.circular(15.0),
                     ),
                   ),
-                  filled: true,
                   hintText: "Password",
-                  fillColor: Colors.white70),
+                  contentPadding: EdgeInsets.all(13)),
             ),
           ],
         ),
